@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>Registracija</title>
+  <meta charset="utf-8" />
+  <meta name="author" content="Mihael Anđel" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="keywords" content="HTML, CSS, FOI, WebDiP, Registracija" />
+  <link rel="stylesheet" href="../css/mandel.css">
+  <link rel="stylesheet" type="text/css" href="../css/mandel_1024.css" />
+  <link rel="stylesheet" type="text/css" href="../css/mandel_800-1024.css" />
+  <link rel="stylesheet" type="text/css" href="../css/mandel_480-800.css" />
+  <link rel="stylesheet" type="text/css" href="../css/mandel_480.css" />
+</head>
+
+<body>
+  <section id="zaglavlje" class="registracija">
+    <header>
+      <h1>Registracija</h1>
+    </header>
+  </section>
+
+  <nav id="izbornik">
+    <ul>
+      <li><a href="../index.html" class="izbornik">Početna stranica</a></li>
+      <li>
+        <a href="../ostalo/multimedija.html" class="izbornik">Multimedija</a>
+      </li>
+      <li><a href="../ostalo/popis.html" class="izbornik">Popis</a></li>
+      <li><a href="obrazac.html" class="izbornik">Obrazac</a></li>
+      <li><a href="prijava.html" class="izbornik">Prijava</a></li>
+      <li><a href="registracija.html" class="izbornik">Registracija</a></li>
+      <li><a href="../ostalo/era.html">ERA</a></li>
+      <li><a href="../ostalo/navigacijski.html">Navigacijski</a></li>
+    </ul>
+    <div class="clear"></div>
+  </nav>
+
+  <section id="sadrzaj">
+    <form action="http://barka.foi.hr/WebDiP/2018/materijali/zadace/ispis_forme.php" method="POST">
+      <div id="forma">
+        <table>
+          <tr>
+            <td>
+              <label for="ime">Ime: </label>
+            </td>
+
+            <td>
+              <input id="ime" type="text" name="ime" placeholder="Ime" maxlength="25" size="15">
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <label for="prezime">Prezime: </label>
+            </td>
+
+            <td>
+              <input id="prezime" type="text" name="prezime" placeholder="Prezime" maxlength="40" size="20">
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <label for="korisničko_ime">Korisničko ime: </label>
+            </td>
+
+            <td>
+              <input id="korisničko_ime" type="text" name="korisničko ime" placeholder="Korisničko ime" maxlength="20">
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <label for="datum_rođenja">Datum rođenja: </label>
+            </td>
+
+            <td>
+              <input id="datum_rođenja" type="date" name="datum_rođenja">
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <label for="email">E-mail adresa: </label>
+            </td>
+
+            <td>
+              <input id="email" type="email" name="email" placeholder="E-mail adresa">
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <label for="lozinka">Lozinka: </label>
+            </td>
+
+            <td>
+              <input id="lozinka" type="password" name="lozinka" placeholder="Lozinka">
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <label for="potvrda_lozinke">Potvrda lozinke: </label>
+            </td>
+
+            <td>
+              <input id="potvrda_lozinke" type="password" name="potvrda lozinke" placeholder="Potvrda lozinke">
+            </td>
+          </tr>
+
+          <tr>
+            <td colspan="2">
+              <input id="gumb" type="submit" value="Registracija">
+            </td>
+          </tr>
+
+        </table>
+      </div>
+    </form>
+  </section>
+
+  <footer id="podnozje">
+    <p>
+      &copy; 2019, Mihael Anđel |
+    </p>
+    <address>
+      Kontakt: <a href="mailto:mandel@foi.hr" target="_blank">Mihael Anđel</a>
+    </address>
+    <p> |
+      Posljednja izmjena: 22/03/2019
+    </p>
+
+    <a
+      href="https://validator.w3.org/nu/?doc=http%3A%2F%2Fbarka.foi.hr%2FWebDiP%2F2018%2Fzadaca_01%2Fmandel%2Fobrasci%2Fregistracija.html">
+      <img id="html5" src="../multimedija/HTML5.png" alt="HTML 5 validacija" width="40" /></a>
+    <a
+      href="https://jigsaw.w3.org/css-validator/validator?uri=http%3A%2F%2Fbarka.foi.hr%2FWebDiP%2F2018%2Fzadaca_01%2Fmandel%2Fcss%2Fmandel.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en"><img
+        id="css3" src="../multimedija/CSS3.png" alt="CSS 3 validacija" height="40" /></a>
+  </footer>
+</body>
+
+</html>

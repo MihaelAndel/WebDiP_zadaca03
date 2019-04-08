@@ -1,0 +1,16 @@
+@media print {
+    body {
+        -webkit-print-color-adjust: exact !important;
+    }
+    tr:nth-child(odd) {
+        background-color: black;
+        color: white;
+    }
+    tr:nth-child(even) {
+        background-color: white;
+        color: black;
+    }
+    #zaglavlje, #izbornik, #podnozje {
+        display: none;
+    }
+}

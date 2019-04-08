@@ -1,0 +1,22 @@
+@media screen and (min-width:800px) and (max-width: 1023px) {
+    article {
+        width: 45%;
+    }
+    label {
+        font-size: 17px;
+    }
+    div.grid-container {
+        display: grid;
+        margin: 30px 0 0 10px;
+        justify-content: center;
+        grid-template-columns: 45% 45%;
+        grid-row-gap: 30px;
+    }
+    .naslov-forme {
+        font-size: 30px;
+    }
+
+    td.popis-1, td.popis-2, td.popis-3, td.popis-4, th.popis-1, th.popis-2, th.popis-3, th.popis-4 {
+        display: none;
+    }  
+}

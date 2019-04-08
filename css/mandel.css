@@ -1,0 +1,424 @@
+@keyframes pocetnaAnimacija {
+  from {
+    background-color: white;
+  }
+
+  to {
+    background-color: rgb(100, 0, 0);
+  }
+}
+
+@keyframes multimedijaAnimacija {
+  from {
+    top: -100px;
+  }
+
+  to {
+    top: 0px;
+  }
+}
+
+@keyframes popisAnimacija {
+  from {
+    border-radius: 100px;
+    width: 0%;
+  }
+
+  to {
+    border-radius: 0px;
+    width: 100%;
+  }
+}
+
+@keyframes obrazacAnimacija {
+  from {
+    padding: 100px 0 100px 0;
+  }
+
+  to {
+    padding: 0px;
+  }
+}
+
+@keyframes prijavaAnimacija {
+  from {
+    height: 0px;
+  }
+
+  to {
+    height: 80px;
+  }
+}
+
+@keyframes registracijaAnimacija {
+  from {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    background-color: rgb(204, 26, 236)
+  }
+
+  to {
+    margin: 0px;
+  }
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  font-family: "Calibri light";
+  background-color: white;
+  margin: 0;
+  min-height: 100%;
+  position: relative;
+}
+
+#zaglavlje {
+  position: relative;
+  width: 100%;
+  height: 80px;
+  text-align: center;
+  margin: auto;
+}
+
+#zaglavlje.pocetna {
+  animation: pocetnaAnimacija 1.5s;
+  font-size: 30px;
+  background-color: rgb(100, 0, 0);
+}
+
+#zaglavlje.multimedija {
+  animation: multimedijaAnimacija 1.5s;
+  font-size: 30px;
+  background-color: rgb(100, 0, 0);
+}
+
+#zaglavlje.popis {
+  animation: popisAnimacija 1s;
+  font-size: 30px;
+  background-color: rgb(100, 0, 0);
+}
+
+#zaglavlje.obrazac {
+  animation: obrazacAnimacija 1.75s;
+  font-size: 30px;
+  background-color: rgb(100, 0, 0);
+}
+
+#zaglavlje.prijava {
+  animation: prijavaAnimacija 1.75s;
+  font-size: 30px;
+  background-color: rgb(100, 0, 0);
+  color: white;
+}
+
+#zaglavlje.registracija {
+  animation: registracijaAnimacija 1.75s;
+  font-size: 30px;
+  background-color: rgb(100, 0, 0);
+  color: white;
+}
+
+#izbornik {
+  box-sizing: border-box;
+  width: 100%;
+  font-size: 20px;
+  border: 3px solid rgb(100, 0, 0);
+  background-color: rgba(255, 70, 70, 0.1);
+  border-radius: 0 0 20px 20px;
+  text-align: center;
+}
+
+#izbornik>ul {
+  list-style-type: none;
+  margin: auto;
+}
+
+#izbornik>ul>li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+#o-meni {
+  vertical-align: top;
+  color: black;
+  text-align: justify;
+  display: inline-block;
+  width: 50%;
+}
+
+#osobni-podaci {
+  list-style-type: disc;
+  display: inline-block;
+  vertical-align: top;
+  color: black;
+  text-align: left;
+}
+
+#osobni-podaci>li {
+  margin: auto;
+}
+
+.glavni-sadrzaj {
+  position: relative;
+  top: 10px;
+  width: 100%;
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+article {
+  position: relative;
+  display: inline-block;
+  box-shadow: 0px 0px 15px;
+  width: 30%;
+  height: 100%;
+  border: 3px solid rgb(255, 70, 70);
+  color: black;
+  margin: 0 10px 20px 10px;
+  vertical-align: top;
+  transition: 0.2s ease-in-out;
+}
+
+article:hover {
+  background-color: #ffd3d3;
+}
+
+article>p {
+  text-align: justify;
+  margin: 0 15px 10px 15px;
+}
+
+fieldset {
+  border: 0;
+}
+
+form {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+form input,
+button {
+  display: block;
+  margin: 5px auto 5px auto;
+}
+
+#forma {
+  margin-top: 20px;
+  display: inline-block;
+  text-align: center;
+  width: 400px;
+  height: 100%;
+  border: 3px solid rgb(100, 0, 0);
+  box-shadow: 0 0 10px;
+}
+
+.naslov-forme {
+  font-size: 35px;
+  text-align: center;
+}
+
+table {
+  margin: auto;
+}
+
+td+td {
+  float: left;
+}
+
+input[type="radio"],
+input[type="radio"]+span {
+  float: left;
+}
+
+label {
+  font-size: 18px;
+}
+
+h1 {
+  margin: 0;
+  position: relative;
+  top: 10px;
+  color: white;
+}
+
+h2 {
+  margin: 0 0 10px 0;
+  color: black;
+  font-size: 35px;
+}
+
+h3 {
+  margin: auto;
+  margin-bottom: 10px;
+  font-size: 100%;
+}
+
+article>h3 {
+  background-color: rgb(255, 70, 70);
+}
+
+article>p {
+  margin-bottom: 10px;
+}
+
+p {
+  margin: auto;
+}
+
+a {
+  color: rgb(163, 34, 34);
+  font-family: "Courier New", Courier, monospace;
+  transition: 0.1s ease-in-out;
+  text-decoration: none;
+}
+
+figure {
+  text-align: center;
+}
+
+#podnozje {
+  font-family: "Calibri light";
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 50px;
+  background-color: rgb(100, 0, 0);
+  font-size: 18px;
+  text-align: center;
+  color: #dddddd;
+}
+
+#podnozje.pocetna {
+  position: relative;
+  top: 100px;
+}
+
+#podnozje.registracija,
+#podnozje.multimedija {
+  position: relative;
+  top: 150px;
+}
+
+#podnozje.obrazac {
+  position: relative;
+  top: 180px;
+}
+
+#podnozje p,
+address {
+  vertical-align: top;
+  display: inline-block;
+}
+
+#podnozje a {
+  color: #ffffff;
+}
+
+a:visited {
+  color: rgb(184, 126, 60);
+}
+
+a:hover {
+  color: rgb(255, 115, 115);
+}
+
+hr {
+  border-color: rgb(255, 70, 70);
+  width: 75%;
+}
+
+#css3 {
+  position: relative;
+  top: 2px;
+}
+
+div.grid-container {
+  display: grid;
+  margin: 30px 0 0 10px;
+  justify-content: center;
+  grid-template-columns: 30% 30% 30%;
+  grid-column-gap: 2%;
+  grid-row-gap: 30px;
+}
+
+div.grid-element {
+  align-self: center;
+  justify-self: center;
+  /* border: 1px solid black; */
+}
+
+div.grid-element figure {
+  margin: 10px;
+}
+
+div.grid-element img {
+  border: 1px solid rgb(100, 0, 0);
+  box-shadow: 0 0 10px;
+  width: 100%;
+}
+
+div.grid-element figcaption {
+  text-align: center;
+  font-family: Verdana;
+  font-size: 15px;
+}
+
+#element1 {
+  border: 2px solid rgb(100, 0, 0);
+  padding: 10px;
+}
+
+#element5 {
+  border: 2px solid rgb(100, 0, 0);
+  margin: 40px;
+}
+
+#element8 {
+  border: 2px solid rgb(100, 0, 0);
+  padding: 10px;
+  margin: 20px;
+}
+
+#element11 {
+  border: 2px solid rgb(100, 0, 0);
+  margin-top: 30px;
+  padding-bottom: 50px;
+}
+
+#element13 {
+  border: 2px solid rgb(100, 0, 0);
+  margin-left: 80px;
+  padding-right: 30px;
+}
+
+table.popis {
+  margin-top: 20px;
+  width: 95%;
+  border: 1px solid black;
+  overflow: hidden;
+  border-collapse: collapse;
+}
+
+table.popis td,
+table.popis th {
+  border: 1px solid black;
+  float: none;
+}
+
+table.popis th {
+  font-size: 20px;
+}
+
+table.popis td:hover,
+table.popis th:hover {
+  background-color: rgb(255, 200, 200);
+}
