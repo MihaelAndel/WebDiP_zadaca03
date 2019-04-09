@@ -13,6 +13,8 @@
   <link rel="stylesheet" type="text/css" href="../css/mandel_800-1024.css" />
   <link rel="stylesheet" type="text/css" href="../css/mandel_480-800.css" />
   <link rel="stylesheet" type="text/css" href="../css/mandel_480.css" />
+
+  <script type="text/javascript" src="../javascript/mandel.js" async defer></script>
 </head>
 
 <body>
@@ -39,7 +41,7 @@
   </nav>
 
   <section id="sadrzaj">
-    <form action="http://barka.foi.hr/WebDiP/2018/materijali/zadace/ispis_forme.php" method="GET">
+    <form novalidate action="http://barka.foi.hr/WebDiP/2018/materijali/zadace/ispis_forme.php" method="GET">
       <div id="forma">
         <fieldset>
           <legend class="naslov-forme">Vaši podaci</legend>
@@ -98,11 +100,11 @@
 
             <tr>
               <td>
-                <label for="broj">Broj: </label>
+                <label for="brojUnos">Broj: </label>
               </td>
 
               <td>
-                <input id="broj" type="number" name="broj" max="100" min="1" value="42" />
+                <input id="brojUnos" type="number" name="brojUnos" />
               </td>
             </tr>
 
@@ -118,7 +120,7 @@
                   <option value="java">Java</option>
                   <option value="kotlin">Kotlin</option>
                   <option value="javascript">JavaScript</option>
-                  <option value="python" selected>Python</option>
+                  <option value="python">Python</option>
                   <option value="php">PHP</option>
                   <option value="sql">SQL</option>
                   <option value="swift">Swift</option>
@@ -166,28 +168,28 @@
               </td>
 
               <td>
-                <input type="radio" id="kontinent" name="kontinent" value="europa" checked="checked" />
+                <input type="radio" class="radio" id="kontinent" name="kontinent" value="europa" />
                 <span>Europa</span>
               </td>
             </tr>
 
             <tr>
               <td>
-                <input type="radio" name="kontinent" value="azija" />
+                <input type="radio" class="radio" name="kontinent" value="azija" />
                 <span>Azija</span>
               </td>
             </tr>
 
             <tr>
               <td>
-                <input type="radio" name="kontinent" value="australija" />
+                <input type="radio" class="radio" name="kontinent" value="australija" />
                 <span>Australija</span>
               </td>
             </tr>
 
             <tr>
               <td>
-                <input type="radio" name="kontinent" value="amerike" />
+                <input type="radio" class="radio" name="kontinent" value="amerike" />
                 <span>Amerike</span>
               </td>
             </tr>
@@ -202,7 +204,11 @@
               </td>
             </tr>
 
-
+            <tr>
+              <td colspan="2">
+                <input type="submit" id="salji" value="Pošalji">
+              </td>
+            </tr>
 
           </table>
         </fieldset>
