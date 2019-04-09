@@ -14,6 +14,12 @@
   <link rel="stylesheet" type="text/css" href="../css/mandel_480-800.css" />
   <link rel="stylesheet" type="text/css" href="../css/mandel_480.css" />
   <link rel="stylesheet" type="text/css" href="../css/mandel_ispis.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js">
+  </script>
+  <script src="../javascript/mandel_jquery.js"></script>
 </head>
 
 <body>
@@ -39,8 +45,8 @@
   </nav>
 
   <section class="sadrzaj">
-    <table class="popis">
-      <tr class="popis">
+    <table id="tablica-popis" class="popis">
+      <thead class="popis">
         <th class="popis">Ime</th>
         <th class="popis">Prezime</th>
         <th class="popis">Telefonski broj</th>
@@ -52,74 +58,76 @@
         <th class="popis-3">Visina</th>
         <th class="popis-2">Kontinent</th>
         <th class="popis-1">Vrijeme</th>
-      </tr>
+      </thead>
+      <tbody>
 
-      <tr>
-        <td class="popis">Ivo</td>
-        <td class="popis">Ivić</td>
-        <td class="popis">0955554444</td>
-        <td class="popis">moja_slika.jpg</td>
-        <td class="popis-7">Ovo moj omiljeni tekst. Zapravo je to priča o jednom junaku...</td>
-        <td class="popis-6">11</td>
-        <td class="popis-5">Python, C#</td>
-        <td class="popis-4">#FF332B</td>
-        <td class="popis-3">422</td>
-        <td class="popis-2">Europa</td>
-        <td class="popis-1">13:22:03</td>
-      </tr>
-      <tr>
-        <td class="popis">Ana</td>
-        <td class="popis">Anić</td>
-        <td class="popis">0415457278</td>
-        <td class="popis">ožujak_2018.png</td>
-        <td class="popis-7">Jadan je onaj koji mora nekoga poniziti da bi sebe uzdigao.</td>
-        <td class="popis-6">7</td>
-        <td class="popis-5">C++, Swift</td>
-        <td class="popis-4">#ABCD12</td>
-        <td class="popis-3">140</td>
-        <td class="popis-2">Azija</td>
-        <td class="popis-1">07:10:11</td>
-      </tr>
-      <tr>
-        <td class="popis">Marko</td>
-        <td class="popis">Marković</td>
-        <td class="popis">0256665578</td>
-        <td class="popis">nijevirus.exe</td>
-        <td class="popis-7">Više se voli ono što se teže dobije.</td>
-        <td class="popis-6">5</td>
-        <td class="popis-5">Go, Swift</td>
-        <td class="popis-4">#FAFA43</td>
-        <td class="popis-3">550</td>
-        <td class="popis-2">Europa</td>
-        <td class="popis-1">09:45:45</td>
-      </tr>
-      <tr>
-        <td class="popis">Đorđe</td>
-        <td class="popis">Tomašković</td>
-        <td class="popis">0114545698</td>
-        <td class="popis">prvi_program.cpp</td>
-        <td class="popis-7">Tko prestane biti prijatelj, prijatelj nikada nije ni bio.</td>
-        <td class="popis-6">42</td>
-        <td class="popis-1">C++, PHP, JavaScript</td>
-        <td class="popis-5">#EBEB4A</td>
-        <td class="popis-4">100</td>
-        <td class="popis-3">Amerike</td>
-        <td class="popis-2">17:40:12</td>
-      </tr>
-      <tr>
-        <td class="popis">Josip</td>
-        <td class="popis">Branković</td>
-        <td class="popis">0232356564</td>
-        <td class="popis">22012004.mp4</td>
-        <td class="popis-7">Slabi ljudi uzvraćaju istom mjerom, jaki ljudi oproste. Inteligentni jednostasvno
-          ignoriraju.</td>
-        <td class="popis-6">12</td>
-        <td class="popis-5">SQL, Kotlin, Java</td>
-        <td class="popis-4">#000000</td>
-        <td class="popis-3">657</td>
-        <td class="popis-2">Australija</td>
-        <td class="popis-1">03:21:53</td>
-      </tr>
+        <tr>
+          <td class="popis">Ivo</td>
+          <td class="popis">Ivić</td>
+          <td class="popis">0955554444</td>
+          <td class="popis">moja_slika.jpg</td>
+          <td class="popis-7">Ovo moj omiljeni tekst. Zapravo je to priča o jednom junaku...</td>
+          <td class="popis-6">11</td>
+          <td class="popis-5">Python, C#</td>
+          <td class="popis-4">#FF332B</td>
+          <td class="popis-3">422</td>
+          <td class="popis-2">Europa</td>
+          <td class="popis-1">13:22:03</td>
+        </tr>
+        <tr>
+          <td class="popis">Ana</td>
+          <td class="popis">Anić</td>
+          <td class="popis">0415457278</td>
+          <td class="popis">ožujak_2018.png</td>
+          <td class="popis-7">Jadan je onaj koji mora nekoga poniziti da bi sebe uzdigao.</td>
+          <td class="popis-6">7</td>
+          <td class="popis-5">C++, Swift</td>
+          <td class="popis-4">#ABCD12</td>
+          <td class="popis-3">140</td>
+          <td class="popis-2">Azija</td>
+          <td class="popis-1">07:10:11</td>
+        </tr>
+        <tr>
+          <td class="popis">Marko</td>
+          <td class="popis">Marković</td>
+          <td class="popis">0256665578</td>
+          <td class="popis">nijevirus.exe</td>
+          <td class="popis-7">Više se voli ono što se teže dobije.</td>
+          <td class="popis-6">5</td>
+          <td class="popis-5">Go, Swift</td>
+          <td class="popis-4">#FAFA43</td>
+          <td class="popis-3">550</td>
+          <td class="popis-2">Europa</td>
+          <td class="popis-1">09:45:45</td>
+        </tr>
+        <tr>
+          <td class="popis">Đorđe</td>
+          <td class="popis">Tomašković</td>
+          <td class="popis">0114545698</td>
+          <td class="popis">prvi_program.cpp</td>
+          <td class="popis-7">Tko prestane biti prijatelj, prijatelj nikada nije ni bio.</td>
+          <td class="popis-6">42</td>
+          <td class="popis-1">C++, PHP, JavaScript</td>
+          <td class="popis-5">#EBEB4A</td>
+          <td class="popis-4">100</td>
+          <td class="popis-3">Amerike</td>
+          <td class="popis-2">17:40:12</td>
+        </tr>
+        <tr>
+          <td class="popis">Josip</td>
+          <td class="popis">Branković</td>
+          <td class="popis">0232356564</td>
+          <td class="popis">22012004.mp4</td>
+          <td class="popis-7">Slabi ljudi uzvraćaju istom mjerom, jaki ljudi oproste. Inteligentni jednostasvno
+            ignoriraju.</td>
+          <td class="popis-6">12</td>
+          <td class="popis-5">SQL, Kotlin, Java</td>
+          <td class="popis-4">#000000</td>
+          <td class="popis-3">657</td>
+          <td class="popis-2">Australija</td>
+          <td class="popis-1">03:21:53</td>
+        </tr>
+      </tbody>
     </table>
   </section>
 
