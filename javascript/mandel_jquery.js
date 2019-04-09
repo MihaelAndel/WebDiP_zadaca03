@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(function () {
     $('#tablica-popis').DataTable({
         //"pageLength": 3,
         //dom: 'Bfrtip',
