@@ -361,6 +361,7 @@ div.grid-element figure {
 }
 
 div.grid-element img {
+  box-sizing: border-box;
   border: 1px solid rgb(100, 0, 0);
   box-shadow: 0 0 10px;
   width: 100%;
@@ -370,34 +371,6 @@ div.grid-element figcaption {
   text-align: center;
   font-family: Verdana;
   font-size: 15px;
-}
-
-#element1 {
-  border: 2px solid rgb(100, 0, 0);
-  padding: 10px;
-}
-
-#element5 {
-  border: 2px solid rgb(100, 0, 0);
-  margin: 40px;
-}
-
-#element8 {
-  border: 2px solid rgb(100, 0, 0);
-  padding: 10px;
-  margin: 20px;
-}
-
-#element11 {
-  border: 2px solid rgb(100, 0, 0);
-  margin-top: 30px;
-  padding-bottom: 50px;
-}
-
-#element13 {
-  border: 2px solid rgb(100, 0, 0);
-  margin-left: 80px;
-  padding-right: 30px;
 }
 
 table.popis {
