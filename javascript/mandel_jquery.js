@@ -17,13 +17,27 @@ $(function () {
 
     if ($("body").attr("id") === "multimedija") {
 
-        $("#element1").hover(function () {
-            $("#element1").animate({
-                width: "50%"
+        $("#element1 img").hover(function () {
+            $("#element1 img").animate({
+                width: "80%",
+                borderWidth: 20
             });
         }, function () {
-            $("#element1").animate({
-                width: "100%"
+            $("#element1 img").animate({
+                width: "100%",
+                borderWidth: 1
+            });
+        });
+
+        $("#element3 img").hover(function () {
+            $("#element3 img").animate({
+                padding: 30,
+                borderWidth: 2
+            });
+        }, function () {
+            $("#element3 img").animate({
+                padding: 0,
+                borderWidth: 0
             });
         });
     }
