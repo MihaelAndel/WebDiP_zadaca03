@@ -11,14 +11,14 @@ window.onload = function () {
     var tekst = false;
 
     velikiTekst.disabled = true;
-    valjanostGumba()
+    valjanostGumba();
 
     function odrediPreglednik() {
-        let imePreglednika = navigator.appName;
+        let imePreglednika = navigator.userAgent;
 
-        if (imePreglednika === "Netscape") {
+        if (imePreglednika.indexOf("Firefox") > -1) {
             popisKontinenata[1].checked = true;
-        } else if (imePreglednika.toUpperCase === "Opera") {
+        } else if (imePreglednika.indexOf("Chrome") > -1) {
             popisKontinenata[0].checked = true;
         } else {
             popisKontinenata[3].checked = true;
@@ -55,7 +55,6 @@ window.onload = function () {
     listaJezika.addEventListener("input", function () {
         //console.log("unos");
         var brojac = 0;
-        var zadnjiOznacen = null;
         var poljeOpcija = this.getElementsByTagName("option");
         for (i = 0; i < poljeOpcija.length; i++) {
             if (poljeOpcija[i].selected === true) {
