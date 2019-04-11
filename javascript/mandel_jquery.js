@@ -44,6 +44,16 @@ $(function () {
         });
     }
 
+    if ($("body").attr("id") === "registracija") {
+        $.ajax({
+            url: "https://barka.foi.hr/WebDiP/2018/materijali/zadace/dz3/userNameSurname.php",
+            method: "GET",
+            success: function () {
+
+            }
+        });
+    }
+
 });
 
 
