@@ -2,6 +2,8 @@ $(function () {
 
     if ($("body").attr("id") === "popis") {
 
+        // console.log("učitano");
+
         $('#tablica-popis').DataTable({
             //"pageLength": 3,
             //dom: 'Bfrtip',
