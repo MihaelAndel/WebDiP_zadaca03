@@ -50,6 +50,8 @@ $(function () {
         var korisnickoImeUnos = $("#korisničko_ime");
         var lozinkaUnos = $("#lozinka");
         var emailUnos = document.getElementById("email");
+        var gumbRegistriraj = $("#gumb");
+        var ponovljenaLozinka = $("#potvrda_lozinke");
         var regexUzorak = new RegExp(/^(\w|(\w\.\w)|\w\.)+@(?=\w*\.)(\w|(\.\w\w)|(\w\.\w\w))+$/);
 
         lozinkaUnos.prop("disabled", true);
@@ -76,6 +78,19 @@ $(function () {
         prezimeSelect.change(provjeriLozinku);
 
         emailUnos.addEventListener("input", provjeriEmail);
+
+        gumbRegistriraj.click(function () {
+            if (lozinkaUnos.attr("disabled")) {
+
+            } else {
+                if (lozinkaUnos.val() === ponovljenaLozinka.val()) {
+
+                } else {
+                    alert("Lozinke nisu identične!");
+                    event.preventDefault();
+                }
+            }
+        });
 
         function provjeriEmail() {
             if (regexUzorak.test(emailUnos.value)) {
@@ -133,6 +148,3 @@ $(function () {
     }
 
 });
-
-
-//^(\w|(\w\.\w)|\w\.)+@(?=\w*\.)(\w|(\.\w\w)|(\w\.\w\w))+$ regex za e-mail
