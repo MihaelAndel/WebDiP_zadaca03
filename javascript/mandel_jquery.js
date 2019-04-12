@@ -20,26 +20,52 @@ $(function () {
     if ($("body").attr("id") === "multimedija") {
 
         $("#element1 img").hover(function () {
-            $("#element1 img").animate({
+            $(this).animate({
                 width: "80%",
                 borderWidth: 20
             });
         }, function () {
-            $("#element1 img").animate({
+            $(this).animate({
                 width: "100%",
                 borderWidth: 1
             });
         });
 
         $("#element3 img").hover(function () {
-            $("#element3 img").animate({
+            $(this).animate({
                 padding: 30,
                 borderWidth: 2
             });
         }, function () {
-            $("#element3 img").animate({
+            $(this).animate({
                 padding: 0,
-                borderWidth: 0
+                borderWidth: 1
+            });
+        });
+
+        $("#element6 video").click(function () {
+            $(this).animate({
+                width: "150%"
+            });
+        });
+
+        $("#element2 img").hover(function () {
+            $(this).animate({
+                marginTop: "70px"
+            });
+        }, function () {
+            $(this).animate({
+                marginTop: "0px"
+            });
+        });
+
+        $("#element5 img").hover(function () {
+            $(this).animate({
+                paddingBottom: "100px"
+            });
+        }, function () {
+            $(this).animate({
+                paddingBottom: 0
             });
         });
     }
@@ -70,6 +96,18 @@ $(function () {
                 });
             }
         });
+
+        $.getJSON("../json/states.json", function (podaci) {
+            var drzave = [];
+            for (var i = 0; i < podaci.length; i++) {
+                drzave.push(podaci[i]);
+            }
+
+            $("#drzave").autocomplete({
+                source: drzave
+            });
+        });
+
 
         imeSelect.change(provjeriKorisnickoIme);
         prezimeSelect.change(provjeriKorisnickoIme);
