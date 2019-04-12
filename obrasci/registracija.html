@@ -13,6 +13,11 @@
   <link rel="stylesheet" type="text/css" href="../css/mandel_800-1024.css" />
   <link rel="stylesheet" type="text/css" href="../css/mandel_480-800.css" />
   <link rel="stylesheet" type="text/css" href="../css/mandel_480.css" />
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="../javascript/mandel_jquery.js"></script>
+  <script src="../javascript/mandel.js"></script>
+
 </head>
 
 <body id="registracija">
@@ -49,7 +54,9 @@
             </td>
 
             <td>
-              <input id="ime" type="text" name="ime" placeholder="Ime" maxlength="25" size="15">
+              <select id="ime" type="text" name="ime">
+                <option value="" selected></option>
+              </select>
             </td>
           </tr>
 
@@ -59,7 +66,9 @@
             </td>
 
             <td>
-              <input id="prezime" type="text" name="prezime" placeholder="Prezime" maxlength="40" size="20">
+              <select name="prezime" id="prezime">
+                <option value="" selected></option>
+              </select>
             </td>
           </tr>
 
@@ -131,8 +140,8 @@
     <address>
       Kontakt: <a href="mailto:mandel@foi.hr" target="_blank">Mihael Anđel</a>
     </address>
-    <p> |
-      Posljednja izmjena: 22/03/2019
+    <p id="izmjena"> |
+      Posljednja izmjena:
     </p>
 
     <a

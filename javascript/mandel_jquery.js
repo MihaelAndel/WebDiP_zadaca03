@@ -45,13 +45,76 @@ $(function () {
     }
 
     if ($("body").attr("id") === "registracija") {
-        $.ajax({
-            url: "https://barka.foi.hr/WebDiP/2018/materijali/zadace/dz3/userNameSurname.php",
-            method: "GET",
-            success: function () {
+        var imeSelect = $("#ime");
+        var prezimeSelect = $("#prezime");
+        var korisnickoImeUnos = $("#korisničko_ime");
+        var lozinkaUnos = $("#lozinka");
+        lozinkaUnos.prop("disabled", true);
+        korisnickoImeUnos.prop("disabled", "true");
 
+        $.ajax({
+            url: "https://barka.foi.hr/WebDiP/2018/materijali/zadace/dz3/userNameSurname.php?all",
+            method: "GET",
+            dataType: "xml",
+            success: function (podaci) {
+                $(podaci).find("user").each(function () {
+                    var ime = $(this).find("name").text();
+                    var prezime = $(this).find("surname").text();
+                    imeSelect.append("<option value='" + ime + "'>" + ime + "</option>");
+                    prezimeSelect.append("<option value='" + prezime + "'>" + prezime + "</option>");
+                });
             }
         });
+
+        imeSelect.change(provjeriKorisnickoIme);
+        prezimeSelect.change(provjeriKorisnickoIme);
+
+        imeSelect.change(provjeriLozinku);
+        prezimeSelect.change(provjeriLozinku);
+
+        function provjeriKorisnickoIme() {
+            var ime = imeSelect.val();
+            // console.log(ime);
+            var prezime = prezimeSelect.val();
+            $.ajax({
+                url: "https://barka.foi.hr/WebDiP/2018/materijali/zadace/dz3/userNameSurname.php",
+                method: "GET",
+                data: {
+                    name: ime,
+                    surname: prezime
+                },
+                success: function (podaci) {
+                    var korIme = $(podaci).find("username").text();
+                    if (korIme === "0") {
+                        console.log("nema tog korisnika");
+                        korisnickoImeUnos.removeAttr("disabled");
+                    } else {
+                        korisnickoImeUnos.attr("value", korIme);
+                        korisnickoImeUnos.attr("disabled", "true");
+                    }
+                }
+            });
+        }
+
+        function provjeriLozinku() {
+            var ime = imeSelect.val();
+            var prezime = prezimeSelect.val();
+
+            $.getJSON("../json/users.json", function (podaci) {
+                $.each(podaci, function (redniBroj, vrijednost) {
+                    if (ime === vrijednost.name && prezime === vrijednost.surname) {
+                        console.log("ima");
+                        lozinkaUnos.prop("disabled", true);
+                        lozinkaUnos.attr("value", vrijednost.password);
+                        return false;
+                    } else {
+                        console.log("nema");
+                        lozinkaUnos.prop("disabled", false);
+                        lozinkaUnos.attr("value", "");
+                    }
+                })
+            });
+        }
     }
 
 });
