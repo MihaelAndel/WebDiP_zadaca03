@@ -49,6 +49,9 @@ $(function () {
         var prezimeSelect = $("#prezime");
         var korisnickoImeUnos = $("#korisničko_ime");
         var lozinkaUnos = $("#lozinka");
+        var emailUnos = document.getElementById("email");
+        var regexUzorak = new RegExp(/^(\w|(\w\.\w)|\w\.)+@(?=\w*\.)(\w|(\.\w\w)|(\w\.\w\w))+$/);
+
         lozinkaUnos.prop("disabled", true);
         korisnickoImeUnos.prop("disabled", "true");
 
@@ -72,7 +75,19 @@ $(function () {
         imeSelect.change(provjeriLozinku);
         prezimeSelect.change(provjeriLozinku);
 
+        emailUnos.addEventListener("input", provjeriEmail);
+
+        function provjeriEmail() {
+            if (regexUzorak.test(emailUnos.value)) {
+                $(emailUnos).addClass("dobar-unos");
+            } else {
+                $(emailUnos).addClass("krivi-unos");
+
+            }
+        }
+
         function provjeriKorisnickoIme() {
+            console.log("nekaj");
             var ime = imeSelect.val();
             // console.log(ime);
             var prezime = prezimeSelect.val();

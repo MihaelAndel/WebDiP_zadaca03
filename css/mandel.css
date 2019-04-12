@@ -395,3 +395,13 @@ table.popis td:hover,
 table.popis th:hover {
   background-color: rgb(255, 200, 200);
 }
+
+
+.krivi-unos {
+  background-color: rgb(192, 135, 121);
+
+}
+
+.dobar-unos {
+  background-color: white;
+}
