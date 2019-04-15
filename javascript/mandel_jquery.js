@@ -2,11 +2,7 @@ $(function () {
 
     if ($("body").attr("id") === "popis") {
 
-        // console.log("učitano");
-
         $('#tablica-popis').DataTable({
-            //"pageLength": 3,
-            //dom: 'Bfrtip',
             lengthMenu: [
                 [2, 3, 5, 10, 25],
                 ['2', '3', '5', '10', '25']
@@ -74,9 +70,9 @@ $(function () {
         var imeSelect = $("#ime");
         var prezimeSelect = $("#prezime");
         var korisnickoImeUnos = $("#korisničko_ime");
-        var lozinkaUnos = $("#lozinka");
         var emailUnos = document.getElementById("email");
         var gumbRegistriraj = $("#gumb");
+        var lozinkaUnos = $("#lozinka");
         var ponovljenaLozinka = $("#potvrda_lozinke");
         var regexUzorak = new RegExp(/^(\w|(\w\.\w)|\w\.)+@(?=\w*\.)(\w|(\.\w\w)|(\w\.\w\w))+$/);
 
@@ -84,6 +80,9 @@ $(function () {
         korisnickoImeUnos.prop("disabled", "true");
 
         $.ajax({
+            xhrFields: {
+                withCredentials: true
+            },
             url: "https://barka.foi.hr/WebDiP/2018/materijali/zadace/dz3/userNameSurname.php?all",
             method: "GET",
             dataType: "xml",
@@ -118,15 +117,11 @@ $(function () {
         emailUnos.addEventListener("input", provjeriEmail);
 
         gumbRegistriraj.click(function () {
-            if (lozinkaUnos.attr("disabled")) {
-
-            } else {
-                if (lozinkaUnos.val() === ponovljenaLozinka.val()) {
-
-                } else {
-                    alert("Lozinke nisu identične!");
-                    event.preventDefault();
-                }
+            if (ponovljenaLozinka.val() !== lozinkaUnos.val()) {
+                event.preventDefault();
+                alert("Lozinke nisu identicne!");
+                ponovljenaLozinka.addClass("krivi-unos");
+                lozinkaUnos.addClass("krivi-unos");
             }
         });
 
@@ -140,11 +135,12 @@ $(function () {
         }
 
         function provjeriKorisnickoIme() {
-            console.log("nekaj");
             var ime = imeSelect.val();
-            // console.log(ime);
             var prezime = prezimeSelect.val();
             $.ajax({
+                xhrFields: {
+                    withCredentials: true
+                },
                 url: "https://barka.foi.hr/WebDiP/2018/materijali/zadace/dz3/userNameSurname.php",
                 method: "GET",
                 data: {
@@ -154,7 +150,6 @@ $(function () {
                 success: function (podaci) {
                     var korIme = $(podaci).find("username").text();
                     if (korIme === "0") {
-                        console.log("nema tog korisnika");
                         korisnickoImeUnos.removeAttr("disabled");
                     } else {
                         korisnickoImeUnos.attr("value", korIme);
@@ -171,12 +166,10 @@ $(function () {
             $.getJSON("../json/users.json", function (podaci) {
                 $.each(podaci, function (redniBroj, vrijednost) {
                     if (ime === vrijednost.name && prezime === vrijednost.surname) {
-                        console.log("ima");
                         lozinkaUnos.prop("disabled", true);
                         lozinkaUnos.attr("value", vrijednost.password);
                         return false;
                     } else {
-                        console.log("nema");
                         lozinkaUnos.prop("disabled", false);
                         lozinkaUnos.attr("value", "");
                     }
